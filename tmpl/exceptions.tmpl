@@ -2,13 +2,7 @@
     var data = obj;
 ?>
 <?js if (data.description && data.type && data.type.names) { ?>
-<dl>
-    <dt>
-        <div class="param-desc">
-        <?js= data.description ?>
-        </div>
-    </dt>
-    <dd></dd>
+<dl class="param-type pad-type">
     <dt>
         <dl>
             <dt>
@@ -19,8 +13,10 @@
             </dd>
         </dl>
     </dt>
-    <dd></dd>
 </dl>
+<div class="param-desc">
+  <?js= data.description ?>
+</div>
 <?js } else { ?>
     <div class="param-desc">
     <?js if (data.description) { ?>

@@ -136,7 +136,7 @@ function addNonParamAttributes(items) {
 
 function addSignatureParams(f) {
     var params = f.params ? addParamAttributes(f.params) : [];
-    f.signature = util.format( '%s(%s)', (f.signature || ''), params.join(', ') );
+    f.signature = util.format( '%s(%s)', (f.signature || ''), '<span class="sig-params">' + params.join('<span class="params-divider">, </span>') + '</span>' );
 }
 
 function addSignatureReturns(f) {
@@ -164,7 +164,7 @@ function addSignatureReturns(f) {
         returnTypes = addNonParamAttributes(f.returns);
     }
     if (returnTypes.length) {
-        returnTypesString = util.format( ' &rarr; %s{%s}', attribsString, returnTypes.join('|') );
+        returnTypesString = util.format( ':%s%s', attribsString, returnTypes.join('|') );
     }
 
     f.signature = '<span class="signature">' + (f.signature || '') + '</span>' +
@@ -175,7 +175,7 @@ function addSignatureTypes(f) {
     var types = f.type ? buildItemTypeStrings(f) : [];
 
     f.signature = (f.signature || '') + '<span class="type-signature">' +
-        (types.length ? ' :' + types.join('|') : '') + '</span>';
+        (types.length ? ':' + types.join('|') : '') + '</span>';
 }
 
 function addAttribs(f) {
@@ -289,10 +289,8 @@ function attachModuleSymbols(doclets, modules) {
 
 function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
     var nav = '';
-    var conf = env.conf.templates || {};
-    conf.default = conf.default || {};
 
-    if (items && items.length) {
+    if (items.length) {
         var itemsNav = '';
 
         items.forEach(function(item) {
@@ -303,21 +301,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
                 itemsNav += '<li>' + linktoFn('', item.name);
                 itemsNav += '</li>';
             } else if ( !hasOwnProp.call(itemsSeen, item.longname) ) {
-                var displayName;
-                if (!!conf.default.useLongnameInNav) {
-                    displayName = item.longname;
-                    if(conf.default.useLongnameInNav > 0 && conf.default.useLongnameInNav !== true){
-                        var num = conf.default.useLongnameInNav;
-                        var cropped = item.longname.split(".").slice(-num).join(".");
-                        if(cropped !== displayName){
-                            displayName = "..." + cropped;
-                        }
-                    }
-                } else {
-                    displayName = item.name;
-                }
-
-                itemsNav += '<li>' + linktoFn(item.longname, displayName.replace(/^module:/g, ''));
+                itemsNav += '<li>' + linktoFn(item.longname, item.name.replace(/^module:/, ''));
                 if (methods.length) {
                     itemsNav += "<ul class='methods'>";
 

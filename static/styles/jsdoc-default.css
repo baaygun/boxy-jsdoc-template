@@ -11,18 +11,17 @@ html, body {
 
 body {
   color: #4d4e53;
-  background-color: white;
+  background-color: #fafafa;
   margin: 0 auto;
   padding: 0 20px;
-
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 160%;
+  line-height: 140%;
 }
 
 a,
 a:active {
-  color: #0095dd;
+  color: #333;
   text-decoration: none;
 }
 
@@ -52,7 +51,7 @@ h1 {
 
 h1.page-title {
   font-size: 48px;
-  margin: 1em 30px;
+  padding-left: 5px;
 }
 
 h2 {
@@ -92,9 +91,7 @@ tt, code, kbd, samp {
 }
 
 .class-description {
-  font-size: 130%;
-  line-height: 140%;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   margin-top: 1em;
 }
 
@@ -105,7 +102,7 @@ tt, code, kbd, samp {
 #main {
   float: right;
   min-width: 360px;
-  width: calc(100% - 250px);
+  width: calc(100% - 200px);
 }
 
 header {
@@ -114,8 +111,7 @@ header {
 
 section {
   display: block;
-  background-color: #fff;
-  padding: 0 30px;
+  padding: 0 0 0 10px;
 }
 
 .variation {
@@ -124,16 +120,16 @@ section {
 
 .signature-attributes {
   font-size: 60%;
-  color: #aaa;
+  color: #000;
   font-style: italic;
   font-weight: lighter;
+  padding-left: 5px;
 }
 
 nav {
   float: left;
   display: block;
-  width: 250px;
-  background: #fff;
+  width: 200px;
   overflow: auto;
   position: fixed;
   height: 100%;
@@ -169,12 +165,6 @@ nav ul a:active {
   font-size: 12px;
 }
 
-nav ul a:hover,
-nav ul a:active {
-  color: hsl(200, 100%, 43%);
-  text-decoration: none;
-}
-
 nav > ul {
   padding: 0 10px;
 }
@@ -188,13 +178,13 @@ nav ul ul {
 }
 
 nav ul ul a {
-  color: hsl(207, 1%, 60%);
-  border-left: 1px solid hsl(207, 10%, 86%);
+  color: #aaa;
+  border-left: 1px solid #ddd;
 }
 
 nav ul ul a,
 nav ul ul a:active {
-  padding-left: 20px
+  padding-left: 10px
 }
 
 nav h2 {
@@ -206,12 +196,11 @@ nav h2 {
 nav > h2 > a {
    display: block;
    margin: 10px 0 -10px;
-   color: hsl(202, 71%, 50%) !important;
 }
 
 footer {
-  color: hsl(0, 0%, 28%);
-  margin-left: 250px;
+  color: #333;
+  margin-left: 200px;
   display: block;
   padding: 15px;
   font-style: italic;
@@ -224,7 +213,6 @@ footer {
 
 .ancestors a {
    color: #999 !important;
-   text-decoration: none;
 }
 
 .clear {
@@ -244,49 +232,78 @@ footer {
   color: #aaa
 }
 
-.name, .signature {
-  font-family: Consolas, Monaco, 'Andale Mono', monospace
+.group {
+  border: 1px solid #999;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  box-shadow: 0 3px 6px #ccc;
+  background: #fff;
 }
 
-.details {
-  margin-top: 14px;
-  border-left: 2px solid #DDD;
-  line-height: 30px;
+.group > h5 {
+    padding: 1px 7px 3px;
+    margin: 14px 0 10px;
+    display: inline-block;
+    background: #53aece;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 100%;
+    font-family: inherit;
+}
+
+.group > h5:nth-child(3) {
+  margin-top: 0;
+}
+
+dl, dd {
+  margin: 0;
+}
+
+.name, .signature, .type {
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+h4.name {
+  border-bottom: 1px solid #b4e1f7;
+  padding-bottom: 12px;
+}
+
+.details ul {
+  margin: 0;
+}
+
+.details ul {
+  list-style-type: none;
+  padding: 0 0 0 10px;
+  margin-bottom: 8px;
+}
+
+.details dd:last-child ul {
+  margin-bottom: 0;
 }
 
 .details dt {
-   width: 120px;
-   float: left;
-   padding-left: 10px;
-}
-
-.details dd {
-   margin-left: 70px
-}
-
-.details ul {
-   margin: 0
-}
-
-.details ul {
-   list-style-type: none
-}
-
-.details li {
-   margin-left: 30px
+  text-decoration: underline;
 }
 
 .details pre.prettyprint {
-   margin: 0
+   margin: 0;
 }
 
 .details .object-value {
-   padding-top: 0
+   padding-top: 0;
 }
 
 .description {
-  margin-bottom: 1em;
-  margin-top: 1em;
+  margin: 1em 0;
+}
+
+.description.last {
+  margin: 0 0 0.7em;
+}
+
+.description.last:last-child {
+  margin-bottom: 0;
 }
 
 .code-caption {
@@ -316,10 +333,6 @@ footer {
   color: #4D4E53;
 }
 
-.prettyprint code:empty:before {
-  content: '';
-}
-
 .prettyprint > code {
   padding: 15px
 }
@@ -342,6 +355,7 @@ footer {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background: #fff;
 }
 
 .prettyprint.linenums ol {
@@ -363,7 +377,7 @@ footer {
    user-select: text;
 }
 
-.params, .props {
+.props {
   border-spacing: 0;
   border: 1px solid #ddd;
   border-collapse: collapse;
@@ -373,10 +387,18 @@ footer {
   font-size: 14px;
 }
 
-.params .name, .props .name, .name code {
-   color: #4D4E53;
+.pad-type {
+  margin-bottom: 10px;
+}
+
+.params .name, .props .name, .name code, .sig-params {
+   color: #0099cc;
    font-family: Consolas, Monaco, 'Andale Mono', monospace;
    font-size: 100%;
+}
+
+.params-divider {
+    color: #000;
 }
 
 .params td, .params th, .props td, .props th {
@@ -411,14 +433,13 @@ footer {
    padding-bottom: 0;
 }
 
-dl.param-type {
-  border-bottom: 1px solid hsl(0, 0%, 87%);
-  margin-bottom: 30px;
-  padding-bottom: 30px;
+.type, .param-type, .attributes {
+  color: #999;
 }
 
 .param-type dt, .param-type dd {
-  display: inline-block
+  display: inline-block;
+  color: #000;
 }
 
 .param-type dd {
@@ -433,7 +454,7 @@ dl.param-type {
 .navicon-button {
   display: none;
   position: relative;
-  padding: 2.0625rem 1.5rem;
+  padding: 30px 15px;
   transition: 0.25s;
   cursor: pointer;
   user-select: none;
@@ -461,7 +482,7 @@ dl.param-type {
   position: relative;
   width: 2.5em;
   height: .3125rem;
-  background: #000;
+  background: #fff;
   transition: 0.3s;
   border-radius: 2.5rem;
 }
@@ -470,7 +491,7 @@ dl.param-type {
   content: "";
   height: .3125rem;
   width: 2.5rem;
-  background: #000;
+  background: #fff;
   position: absolute;
   z-index: -1;
   transition: 0.3s 0.25s;
@@ -508,13 +529,11 @@ dl.param-type {
 .nav-trigger:checked + label.plus .navicon:before,
 .nav-trigger:checked + label.x .navicon:before {
   transform: rotate(-45deg);
-  background: #FFF;
 }
 
 .nav-trigger:checked + label.plus .navicon:after,
 .nav-trigger:checked + label.x .navicon:after {
   transform: rotate(45deg);
-  background: #FFF;
 }
 
 .nav-trigger:checked + label.plus {
@@ -548,40 +567,56 @@ dl.param-type {
   z-index: 1;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 680px) {
+.src {
+  text-align: right;
+  font-size: 75%;
+  margin-bottom: 5px;
+  color: #aaa;
+}
+
+.src > a {
+    color: #777;
+}
+
+.deprecated {
+  opacity: 0.6;
+}
+
+.deprecated > .name {
+  text-decoration: line-through;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 850px) {
   body {
     overflow-x: hidden;
   }
 
   nav {
-    background: #FFF;
-    width: 250px;
     height: 100%;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    left: -250px;
+    left: -200px;
     z-index: 3;
     padding: 0 10px;
     transition: left 0.2s;
+    background: #fff;
   }
 
   .navicon-button {
     display: inline-block;
     position: fixed;
-    top: 1.5em;
+    top: 0;
     right: 0;
     z-index: 2;
+    background: #000;
+    opacity: 1;
   }
 
   #main {
     width: 100%;
     min-width: 360px;
-  }
-
-  #main h1.page-title {
-    margin: 1em 0;
   }
 
   #main section {
@@ -590,16 +625,5 @@ dl.param-type {
 
   footer {
     margin-left: 0;
-  }
-}
-
-@media only print {
-  nav {
-    display: none;
-  }
-
-  #main {
-    float: none;
-    width: 100%;
   }
 }
