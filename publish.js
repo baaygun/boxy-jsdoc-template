@@ -302,10 +302,30 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
                 itemsNav += '</li>';
             } else if ( !hasOwnProp.call(itemsSeen, item.longname) ) {
                 itemsNav += '<li>' + linktoFn(item.longname, item.name.replace(/^module:/, ''));
+                if (members.length) {
+                    itemsNav += "<ul class='members'>";
+
+                    members.forEach(function (member, i) {
+                        if (i === 0) {
+                          itemsNav += "<li class='list-title'>Members</i>";
+                        }
+
+                        itemsNav += "<li data-type='member'>";
+                        itemsNav += linkto(member.longname, member.name);
+                        itemsNav += "</li>";
+                    });
+
+                    itemsNav += "</ul>";
+                }
+
                 if (methods.length) {
                     itemsNav += "<ul class='methods'>";
 
-                    methods.forEach(function (method) {
+                    methods.forEach(function (method, i) {
+                        if (i === 0) {
+                          itemsNav += "<li class='list-title'>Methods</i>";
+                        }
+
                         itemsNav += "<li data-type='method'>";
                         itemsNav += linkto(method.longname, method.name);
                         itemsNav += "</li>";
@@ -313,6 +333,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
 
                     itemsNav += "</ul>";
                 }
+
                 itemsNav += '</li>';
                 itemsSeen[item.longname] = true;
             }
