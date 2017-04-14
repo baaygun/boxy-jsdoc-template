@@ -85,9 +85,9 @@ h6 {
 
 tt, code, kbd, samp {
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
-  background: #f4f4f4;
+  background: #e9e9e9;
   padding: 1px 5px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .class-description {
@@ -199,12 +199,13 @@ nav > h2 > a {
 }
 
 footer {
-  color: #333;
-  margin-left: 200px;
+  color: #999;
   display: block;
-  padding: 15px;
+  padding: 10px 0 10px 10px;
   font-style: italic;
   font-size: 90%;
+  margin: 40px 0 0 200px;
+  border-top: 1px solid #eee;
 }
 
 .ancestors {
@@ -333,6 +334,10 @@ h4.name {
   color: #4D4E53;
 }
 
+.prettyprint li code {
+  background-color: inherit;
+}
+
 .prettyprint > code {
   padding: 15px
 }
@@ -366,8 +371,12 @@ h4.name {
    border-left: 3px #ddd solid
 }
 
+.prettyprint.linenums li:nth-child(even) {
+    background-color: #f6fafd;
+}
+
 .prettyprint.linenums li.selected, .prettyprint.linenums li.selected * {
-   background-color: lightyellow
+   background-color: #d0ebf5;
 }
 
 .prettyprint.linenums li * {

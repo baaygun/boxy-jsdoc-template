@@ -28,4 +28,9 @@ var self = this;
     <h5>Example<?js= examples.length > 1? 's':'' ?></h5>
     <?js= this.partial('examples.tmpl', examples) ?>
 <?js } ?>
+
+<?js if (data.meta && self.outputSourceFiles) {?>
+<div class="src">Source: <?js= self.linkto(meta.shortpath) ?>, <?js= self.linkto(meta.shortpath, 'line ' + meta.lineno, null, 'line' + meta.lineno) ?></div>
+<?js } ?>
+
 </div>

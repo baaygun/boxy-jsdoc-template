@@ -57,8 +57,8 @@
             if (!param) { return; }
     ?>
 
-    <?js if (params.hasName) {?>
-        <span class="name"><?js= param.name ?></span><?js if (param.type && param.type.names) {?><span class="type"><?js= self.partial('type.tmpl', param.type.names).substr(1) ?></span><?js } ?>
+    <?js if (params.hasName) { ?>
+        <span class="name"><?js= param.name ?></span><?js if (param.type && param.type.names) {?><span class="type"><?js= self.partial('type.tmpl', param.type.names) ?></span><?js } ?>
     <?js } ?>
 
     <?js if (params.hasDefault) {?>
