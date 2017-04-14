@@ -625,7 +625,7 @@ h4.name {
 
   #main {
     width: 100%;
-    min-width: 360px;
+    min-width: 100%;
   }
 
   #main section {
