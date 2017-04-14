@@ -7,6 +7,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  min-width: 320px;
 }
 
 body {
@@ -244,6 +245,7 @@ footer {
   padding: 0 15px;
   box-shadow: 0 3px 6px #ccc;
   background: #fff;
+  overflow: auto;
 }
 
 .group > h5 {
@@ -334,7 +336,7 @@ h4.name {
   font-size: 100%;
   line-height: 18px;
   display: block;
-  margin: 0 30px;
+  margin: 0 0 0 20px;
   background-color: #fff;
   color: #4D4E53;
 }
@@ -485,7 +487,7 @@ h4.name {
   transition: 0.25s;
 }
 .navicon-button:hover  {
-  box-shadow: 0 0 12px #333;
+  background-color: #555;
 }
 
 /* navicon */
@@ -548,6 +550,7 @@ h4.name {
 
 .nav-trigger:checked ~ nav {
   left: 0 !important;
+  opacity: 1 !important;
 }
 
 .nav-trigger:checked ~ .overlay {
@@ -569,7 +572,8 @@ h4.name {
   right: 0;
   width: 100%;
   height: 100%;
-  background: hsla(0, 0%, 0%, 0.5);
+  background-color: #fff;
+  opacity: 0.87;
   z-index: 1;
 }
 
@@ -604,7 +608,7 @@ h4.name {
   background-color: #fafafa;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 850px) {
+@media only screen and (max-width: 850px) {
   body {
     overflow-x: hidden;
   }
@@ -615,10 +619,12 @@ h4.name {
     top: 0;
     right: 0;
     bottom: 0;
-    left: -200px;
+    left: -350px;
+    opacity: 0;
+    box-shadow: 80px 0 80px #fff;
     z-index: 3;
-    padding: 0 10px;
-    transition: left 0.2s;
+    margin-left: 15px;
+    transition: left 0.4s, opacity 0.35s;
     background: #fff;
   }
 
@@ -649,4 +655,5 @@ h4.name {
   footer {
     margin-left: 0;
   }
+
 }
