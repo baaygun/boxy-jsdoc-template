@@ -1,4 +1,4 @@
-/*global env: true */
+/*global env: true, require, exports */
 'use strict';
 
 var doop = require('jsdoc/util/doop');
@@ -307,7 +307,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
 
                     members.forEach(function (member, i) {
                         if (i === 0) {
-                          itemsNav += "<li class='list-title'>Members</i>";
+                          itemsNav += "<li class='list-title'>Members</li>";
                         }
 
                         itemsNav += "<li data-type='member'>";
@@ -323,7 +323,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
 
                     methods.forEach(function (method, i) {
                         if (i === 0) {
-                          itemsNav += "<li class='list-title'>Methods</i>";
+                          itemsNav += "<li class='list-title'>Methods</li>";
                         }
 
                         itemsNav += "<li data-type='method'>";
@@ -577,9 +577,7 @@ exports.publish = function(taffyData, opts, tutorials) {
     members.tutorials = tutorials.children;
 
     // output pretty-printed source files by default
-    var outputSourceFiles = conf.default && conf.default.outputSourceFiles !== false
-        ? true
-        : false;
+    var outputSourceFiles = conf.default && conf.default.outputSourceFiles !== false ? true : false;
 
     // add template helpers
     view.find = find;

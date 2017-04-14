@@ -51,7 +51,7 @@ h1 {
 }
 
 h1.page-title {
-  font-size: 48px;
+  font-size: 45px;
   padding-left: 5px;
 }
 
@@ -194,14 +194,14 @@ nav ul ul a:active {
 }
 
 nav h2 {
-   font-size: 12px;
-   margin: 0;
-   padding: 0;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 nav > h2 > a {
-   display: block;
-   margin: 10px 0 -10px;
+  display: block;
+  margin: 10px 0 -10px;
 }
 
 footer {
@@ -219,7 +219,7 @@ footer {
 }
 
 .ancestors a {
-   color: #999 !important;
+  color: #999 !important;
 }
 
 .clear {
@@ -249,14 +249,14 @@ footer {
 }
 
 .group > h5 {
-    padding: 1px 7px 3px;
-    margin: 14px 0 10px;
-    display: inline-block;
-    background: #58abd6;
-    border-radius: 3px;
-    color: #fff;
-    font-size: 100%;
-    font-family: inherit;
+   padding: 1px 7px 3px;
+   margin: 14px 0 10px;
+   display: inline-block;
+   background: #58abd6;
+   border-radius: 3px;
+   color: #fff;
+   font-size: 100%;
+   font-family: inherit;
 }
 
 .group > h5:nth-child(3) {
@@ -295,11 +295,11 @@ h4.name {
 }
 
 .details pre.prettyprint {
-   margin: 0;
+  margin: 0;
 }
 
 .details .object-value {
-   padding-top: 0;
+  padding-top: 0;
 }
 
 .description {
@@ -329,7 +329,7 @@ h4.name {
 }
 
 .prettyprint.source {
-  width: inherit
+  width: inherit;
 }
 
 .prettyprint code {
@@ -371,26 +371,34 @@ h4.name {
 }
 
 .prettyprint.linenums ol {
-   padding-left: 0
+  padding-left: 0;
 }
 
 .prettyprint.linenums li {
-   border-left: 3px #ddd solid
+  border-left: 3px #ddd solid;
+  position: relative;
+}
+
+.prettyprint.linenums li.selected:before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 13px solid #58abd6;
+  margin: 2px;
 }
 
 .prettyprint.linenums li:nth-child(even) {
-    background-color: #f6fafd;
-}
-
-.prettyprint.linenums li.selected, .prettyprint.linenums li.selected * {
-   background-color: #d0ebf5;
+  background: linear-gradient(to right, #f8f8f8 0%, #f8f8f8 40%, #fff 100%);
 }
 
 .prettyprint.linenums li * {
-   -webkit-user-select: text;
-   -moz-user-select: text;
-   -ms-user-select: text;
-   user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 .props {
@@ -408,45 +416,45 @@ h4.name {
 }
 
 .params .name, .props .name, .name code, .sig-params {
-   color: #0099cc;
-   font-family: Consolas, Monaco, 'Andale Mono', monospace;
-   font-size: 100%;
+  color: #0099cc;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  font-size: 100%;
 }
 
 .params-divider {
-    color: #000;
+   color: #000;
 }
 
 .params td, .params th, .props td, .props th {
-   margin: 0px;
-   text-align: left;
-   vertical-align: top;
-   padding: 10px;
-   display: table-cell;
+  margin: 0px;
+  text-align: left;
+  vertical-align: top;
+  padding: 10px;
+  display: table-cell;
 }
 
 .params td {
-   border-top: 1px solid #eee
+  border-top: 1px solid #eee
 }
 
 .params thead tr, .props thead tr {
-   background-color: #fff;
-   font-weight: bold;
+  background-color: #fff;
+  font-weight: bold;
 }
 
 .params .params thead tr, .props .props thead tr {
-   background-color: #fff;
-   font-weight: bold;
+  background-color: #fff;
+  font-weight: bold;
 }
 
 .params td.description > p:first-child, .props td.description > p:first-child {
-   margin-top: 0;
-   padding-top: 0;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .params td.description > p:last-child, .props td.description > p:last-child {
-   margin-bottom: 0;
-   padding-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .type, .param-type, .attributes {
@@ -498,6 +506,7 @@ h4.name {
   background: #fff;
   transition: 0.3s;
   border-radius: 2.5rem;
+  display: block;
 }
 .navicon:before, .navicon:after {
   display: block;
@@ -585,7 +594,7 @@ h4.name {
 }
 
 .src > a {
-    color: #777;
+   color: #777;
 }
 
 .deprecated {
@@ -624,6 +633,7 @@ h4.name {
     box-shadow: 80px 0 80px #fff;
     z-index: 3;
     margin-left: 15px;
+    padding: 15px 0 10px;
     transition: left 0.4s, opacity 0.35s;
     background: #fff;
   }
