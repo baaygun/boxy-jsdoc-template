@@ -1,21 +1,27 @@
-# Minami
+# Boxy JSDoc Template
 
-A clean, responsive documentation template theme for JSDoc 3.
+A clean and streamlined JSDoc 3 template (extended from Minami).
 
-![Minami Screenshot](http://puu.sh/gOyNe/66c3adcb97.png)
+![screenshot](screenshot.jpg)
 
+![screenshot](screenshot2.jpg)
+
+See the template in action [here](http://grafluxe.com/doc/js/datelish/Datelish.html).
+
+## Extends
+
+- [Minami]([https://github.com/nijikokun/minami) JSDoc theme
 
 ## Uses
 
-- [the Taffy Database library](http://taffydb.com/)
-- [Underscore Template library](http://underscorejs.org/#template)
+- The [Taffy Database library](http://taffydb.com/)
 - [Montserrat](https://fonts.google.com/specimen/Montserrat) & Helvetica Neue
 
 
 ## Install
 
-```bash
-$ npm install --save-dev minami
+```
+$ npm install --save-dev boxy-jsdoc-template
 ```
 
 
@@ -23,33 +29,37 @@ $ npm install --save-dev minami
 
 Clone repository to your designated `jsdoc` template directory, then:
 
-```bash
-$ jsdoc entry-file.js -t path/to/minami
+```
+$ jsdoc entry-file.js -t path/to/boxy-jsdoc-template
 ```
 
 
-### Node.js Dependency
+### Via Node
 
-In your projects `package.json` file add a generate script:
+[![npm](https://nodei.co/npm/boxy-jsdoc-template.png)](https://www.npmjs.com/package/boxy-jsdoc-template)
 
-```json
+`npm i boxy-jsdoc-template -D`
+
+In your projects `package.json` file, add a generate script:
+
+```
 "script": {
-  "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
+  "doc": "jsdoc -c .jsdocrc"
 }
 ```
 
-In your `.jsdoc.json` file, add a template option.
+In your `.jsdocrc` file, add a template option.
 
-```json
+```
 "opts": {
-  "template": "node_modules/minami"
+  "template": "node_modules/boxy-jsdoc-template"
 }
 ```
 
 
 ### Example JSDoc Config
 
-```json
+```
 {
     "tags": {
         "allowUnknownTags": true,
@@ -73,13 +83,16 @@ In your `.jsdoc.json` file, add a template option.
         "encoding": "utf8",
         "private": true,
         "recurse": true,
-        "template": "./node_modules/minami"
+        "template": "./node_modules/boxy-jsdoc-template"
     }
 }
 ```
 
 Specifying a number for useLongnameInNav it will be the max number of path elements to show in nav (starting from Class).
 
+## Thanks
+
+Thanks to the author of the [Minami](https://github.com/nijikokun/minami) theme and its contributors. Their theme and README served as a great base to build from.
 
 ## License
 

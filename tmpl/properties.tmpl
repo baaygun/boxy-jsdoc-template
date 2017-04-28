@@ -6,6 +6,7 @@
     var parentProp = null;
     props.forEach(function(prop, i) {
         if (!prop) { return; }
+
         if ( parentProp && prop.name && prop.name.indexOf(parentProp.name + '.') === 0 ) {
             prop.name = prop.name.substr(parentProp.name.length+1);
             parentProp.subprops = parentProp.subprops || [];
@@ -14,6 +15,12 @@
         }
         else {
             parentProp = prop;
+        }
+
+        if (!data.subprops) {
+            prop.parentObj = "";
+        } else {
+            prop.parentObj += data.name + ".";
         }
     });
 
@@ -39,70 +46,43 @@
     });
 ?>
 
-<table class="props">
-    <thead>
-    <tr>
-        <?js if (props.hasName) {?>
-        <th>Name</th>
-        <?js } ?>
-
-        <th>Type</th>
-
-        <?js if (props.hasAttributes) {?>
-        <th>Attributes</th>
-        <?js } ?>
-
-        <?js if (props.hasDefault) {?>
-        <th>Default</th>
-        <?js } ?>
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
+<div class="props">
     <?js
         var self = this;
+
         props.forEach(function(prop) {
             if (!prop) { return; }
     ?>
 
-        <tr>
-            <?js if (props.hasName) {?>
-                <td class="name"><code><?js= prop.name ?></code></td>
-            <?js } ?>
+    <?js if (props.hasName) {?>
+        <span class="name"><?js if (prop.parentObj) {?><span class="obj-tree"><?js= prop.parentObj ?></span><?js } ?><?js= prop.name ?></span><?js if (prop.type && prop.type.names) {?><span class="type"><?js= self.partial('type.tmpl', prop.type.names) ?></span><?js } ?>
+    <?js } ?>
 
-            <td class="type">
-            <?js if (prop.type && prop.type.names) {?>
-                <?js= self.partial('type.tmpl', prop.type.names) ?>
-            <?js } ?>
-            </td>
+    <?js if (props.hasDefault) {?>
+        <span class="default">
+        <?js if (typeof props.defaultvalue !== 'undefined') { ?>
+            = <?js= self.htmlsafe(props.defaultvalue) ?>
+        <?js } ?>
+        </span>
+    <?js } ?>
 
-            <?js if (props.hasAttributes) {?>
-                <td class="attributes">
-                <?js if (prop.optional) { ?>
-                    &lt;optional><br>
-                <?js } ?>
+    <?js if (props.hasAttributes && (props.optional || props.nullable)) {?>
+        <span class="attributes">
+        <?js if (prop.optional) { ?>
+            (optional)<br>
+        <?js } ?>
 
-                <?js if (prop.nullable) { ?>
-                    &lt;nullable><br>
-                <?js } ?>
-                </td>
-            <?js } ?>
+        <?js if (prop.nullable) { ?>
+            (nullable)<br>
+        <?js } ?>
+        </span>
+    <?js } ?>
 
-            <?js if (props.hasDefault) {?>
-                <td class="default">
-                <?js if (typeof prop.defaultvalue !== 'undefined') { ?>
-                    <?js= self.htmlsafe(prop.defaultvalue) ?>
-                <?js } ?>
-                </td>
-            <?js } ?>
-
-            <td class="description last"><?js= prop.description ?><?js if (prop.subprops) { ?>
-                <h6>Properties</h6><?js= self.partial('properties.tmpl', prop) ?>
-            <?js } ?></td>
-        </tr>
+    <div class="description last"><?js= prop.description ?><?js if (prop.subprops) { ?>
+        <div class="child-props">
+          <?js= self.partial('properties.tmpl', prop) ?>
+        </div>
+    <?js } ?></div>
 
     <?js }); ?>
-    </tbody>
-</table>
+</div>
