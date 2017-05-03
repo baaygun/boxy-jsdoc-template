@@ -20,7 +20,7 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
 
 <?js } ?>
 
-<?js if (data.version || data.since || data.inherited || data.overrides || data.implementations || data.implements || data.mixes || data.deprecated || data.author || data.copyright || data.license || data.defaultvalue || data.tutorials || data.see || data.todo) {?>
+<?js if (data.version || data.since || data.inherited || data.overrides || data.implementations || data.implements || data.mixes || data.deprecated || data.author || data.defaultvalue || data.tutorials || data.see || data.todo) {?>
 <h5>Details</h5>
 <dl class="details">
     <?js if (data.version) {?>
@@ -89,16 +89,6 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
             <li><?js= self.resolveAuthorLinks(a) ?></li>
         <?js }); ?></ul>
     </dd>
-    <?js } ?>
-
-    <?js if (data.copyright) {?>
-    <dt class="tag-copyright">Copyright</dt>
-    <dd class="tag-copyright"><ul class="dummy"><li><?js= copyright ?></li></ul></dd>
-    <?js } ?>
-
-    <?js if (data.license) {?>
-    <dt class="tag-license">License</dt>
-    <dd class="tag-license"><ul class="dummy"><li><?js= license ?></li></ul></dd>
     <?js } ?>
 
     <?js if (data.defaultvalue) {?>

@@ -20,14 +20,16 @@
 <section>
 
 <header>
-    <?js if (doc.author) { ?>
-      <?js= doc.author ?>
-      <br>
-    <?js } ?>
+    <span class="creds">
+      <?js if (doc.copyright) { ?>
+        &copy; <?js= self.htmlsafe(doc.copyright) ?>
+        <br>
+      <?js } ?>
 
-    <?js if (doc.license) { ?>
-      License: <?js= doc.license ?>
-    <?js } ?>
+      <?js if (doc.license) { ?>
+        License: <?js= doc.license ?>
+      <?js } ?>
+    </span>
 
     <hr>
 
