@@ -60,13 +60,13 @@
 
     <?js if (props.hasDefault) {?>
         <span class="default">
-        <?js if (typeof props.defaultvalue !== 'undefined') { ?>
-            = <?js= self.htmlsafe(props.defaultvalue) ?>
+        <?js if (typeof prop.defaultvalue !== 'undefined') { ?>
+            = <?js= self.htmlsafe(prop.defaultvalue) ?>
         <?js } ?>
         </span>
     <?js } ?>
 
-    <?js if (props.hasAttributes && (props.optional || props.nullable)) {?>
+    <?js if (props.hasAttributes && (prop.optional || prop.nullable)) {?>
         <span class="attributes">
         <?js if (prop.optional) { ?>
             (optional)<br>

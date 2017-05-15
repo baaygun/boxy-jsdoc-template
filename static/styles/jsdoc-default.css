@@ -423,11 +423,11 @@ h4.name {
   user-select: text;
 }
 
-.props {
+.props, .params {
   padding-top: 10px;
 }
 
-.child-props {
+.child-props, .child-params {
   padding-left: 25px;
   border-left: 2px solid #b4e1f7;
   margin-left: 5px;
@@ -447,40 +447,12 @@ h4.name {
    color: #000;
 }
 
-.params td, .params th, .props td, .props th {
-  margin: 0px;
-  text-align: left;
-  vertical-align: top;
-  padding: 10px;
-  display: table-cell;
-}
-
-.params td {
-  border-top: 1px solid #eee;
-}
-
-.params thead tr, .props thead tr {
-  background-color: #fff;
-  font-weight: bold;
-}
-
-.params .params thead tr, .props .props thead tr {
-  background-color: #fff;
-  font-weight: bold;
-}
-
-.params td.description > p:first-child, .props td.description > p:first-child {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.params td.description > p:last-child, .props td.description > p:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
 .type, .param-type, .attributes {
   color: #999;
+}
+
+.attributes {
+  padding-left: 5px;
 }
 
 .param-type dt, .param-type dd {
