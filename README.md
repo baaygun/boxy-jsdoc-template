@@ -6,24 +6,22 @@ A clean and streamlined JSDoc 3 template (extended from Minami).
 
 ![screenshot](screenshot2.jpg)
 
-See the template in action [here](http://grafluxe.com/doc/js/datelish/Datelish.html).
+See the template in action [here](http://grafluxe.com/o/doc/datelish/Datelish.html) and [here](http://grafluxe.com/o/doc/email-validator-pro/EmailValidatorPro.html).
 
 ## Extends
 
-- [Minami]([https://github.com/nijikokun/minami) JSDoc theme
+- [Minami](https://github.com/nijikokun/minami) JSDoc theme
 
 ## Uses
 
 - The [Taffy Database library](http://taffydb.com/)
 - [Montserrat](https://fonts.google.com/specimen/Montserrat) & Helvetica Neue
 
-
 ## Install
 
 ```
 $ npm install --save-dev boxy-jsdoc-template
 ```
-
 
 ## Usage
 
@@ -33,10 +31,7 @@ Clone repository to your designated `jsdoc` template directory, then:
 $ jsdoc entry-file.js -t path/to/boxy-jsdoc-template
 ```
 
-
 ### Via Node
-
-[![npm](https://nodei.co/npm/boxy-jsdoc-template.png)](https://www.npmjs.com/package/boxy-jsdoc-template)
 
 `npm i boxy-jsdoc-template -D`
 
@@ -55,7 +50,6 @@ In your `.jsdocrc` file, add a template option.
   "template": "node_modules/boxy-jsdoc-template"
 }
 ```
-
 
 ### Example JSDoc Config
 
