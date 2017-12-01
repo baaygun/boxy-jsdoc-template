@@ -433,7 +433,7 @@ h4.name {
   margin-left: 5px;
 }
 
-.pad-type {
+.pad-type, .param-desc {
   margin-bottom: 10px;
 }
 
