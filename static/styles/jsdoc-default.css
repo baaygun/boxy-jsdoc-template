@@ -331,10 +331,6 @@ h4.name {
   margin: 0 0 0.7em;
 }
 
-.description.last:last-child {
-  margin-bottom: 0;
-}
-
 .code-caption {
   font-style: italic;
   font-size: 107%;
