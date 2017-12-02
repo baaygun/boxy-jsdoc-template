@@ -18,7 +18,7 @@ body {
   padding: 0 20px;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 140%;
+  line-height: 135%;
 }
 
 a,
@@ -278,6 +278,12 @@ footer {
   margin-top: 0;
 }
 
+.group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 dl, dd {
   margin: 0;
 }
@@ -423,17 +429,13 @@ h4.name {
   user-select: text;
 }
 
-.props, .params {
-  padding-top: 10px;
-}
-
 .child-props, .child-params {
   padding-left: 25px;
   border-left: 2px solid #b4e1f7;
   margin-left: 5px;
 }
 
-.pad-type, .param-desc {
+.param-desc {
   margin-bottom: 10px;
 }
 
@@ -462,6 +464,10 @@ h4.name {
 
 .param-type dd {
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+.param-type a {
+  color: inherit;
 }
 
 .disabled {
