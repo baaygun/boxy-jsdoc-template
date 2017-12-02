@@ -597,7 +597,13 @@ exports.publish = function(taffyData, opts, tutorials) {
     }
 
     if (members.globals.length) {
-        generate('', 'Global', [{kind: 'globalobj'}], globalUrl);
+        generate('', 'Global', [
+          {
+              kind: 'globalobj',
+              copyright: members.globals[0].copyright,
+              license: members.globals[0].license
+          }
+        ], globalUrl);
     }
 
     // index page displays information from package.json and lists files
