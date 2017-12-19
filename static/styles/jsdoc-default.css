@@ -610,6 +610,15 @@ h4.name {
   padding-bottom: 20px;
 }
 
+.readme > .group ul {
+  list-style: initial;
+  padding: 0 0 0 20px;
+}
+
+.readme > .group > ul {
+  margin: 10px 0;
+}
+
 .readme .prettyprint code {
   background-color: #fafafa;
 }
