@@ -598,7 +598,7 @@ h4.name {
   opacity: 0.6;
 }
 
-.deprecated > .name {
+.deprecated > .name, .deprecated .sig-params {
   text-decoration: line-through;
 }
 
