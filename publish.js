@@ -296,6 +296,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
         items.forEach(function(item) {
             var methods = find({kind:'function', memberof: item.longname});
             var members = find({kind:'member', memberof: item.longname});
+            var typedefs = find({kind: 'typedef', memberof: item.longname});
 
             if ( !hasOwnProp.call(item, 'longname') ) {
                 itemsNav += '<li>' + linktoFn('', item.name);
@@ -328,6 +329,22 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
 
                         itemsNav += "<li data-type='method'>";
                         itemsNav += linkto(method.longname, method.name);
+                        itemsNav += "</li>";
+                    });
+
+                    itemsNav += "</ul>";
+                }
+
+                if (typedefs.length) {
+                    itemsNav += "<ul class='constants'>";
+
+                    typedefs.forEach(function (typedef, i) {
+                        if (i === 0) {
+                          itemsNav += "<li class='list-title'>Constants</li>";
+                        }
+
+                        itemsNav += "<li data-type='constant'>";
+                        itemsNav += linkto(typedef.longname, typedef.name);
                         itemsNav += "</li>";
                     });
 
